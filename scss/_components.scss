@@ -1,0 +1,399 @@
+.title {
+    font-size: 4.8rem;
+    font-weight: 600;
+    line-height: 5.8rem;
+    @include respond(phone) {
+        font-size: 3.2rem;
+        line-height: 4rem;
+    }
+}
+.description {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+}
+
+.map {
+    width: 100%;
+    height: 72.8rem;
+    @include respond(laptop) {
+        height: 69.6rem;
+    }
+    @include respond(tablet) {
+        height: 40rem;
+        margin-bottom: 3.2rem;
+    }
+    @include respond(phone) {
+        height: 28rem;
+        margin-bottom: 2.4rem;
+    }
+}
+[class*="copyrights-pane"] {
+    display: none !important;
+}
+
+[class*="ground-pane"] {
+    filter: grayscale(1) !important;
+}
+
+.map-description {
+    padding: 3.2rem;
+    display: inline-flex;
+    gap: 0 1.6rem;
+    align-items: start;
+    color: map-get($colors, grey);
+    background: map-get($colors, white);
+    position: absolute;
+    top: 5.6rem;
+    right: 5.6rem;
+    @include respond(laptop) {
+        top: 4rem;
+        right: 4rem;
+    }
+    @include respond(tablet) {
+        position: static;
+        background: map-get($colors, light-gray);
+        margin-bottom: 3.2rem;
+    }
+    @include respond(phone) {
+        padding: 2.4rem;
+        margin-bottom: 2.4rem;
+    }
+    &__icon {
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        mask: center no-repeat;
+        background: map-get($colors, grey);
+        -webkit-mask-image: url(../icons/information.svg);
+        -moz-mask-image: url(../icons/information.svg);
+        mask-image: url(../icons/information.svg);
+        &:hover {
+            cursor: default;
+        }
+    }
+    &__text {
+        font-size: 1.4rem;
+        line-height: 2rem;
+        width: 54rem;
+        @include respond(laptop) {
+            width: 40.6rem;
+        }
+        @include respond(tablet) {
+            width: 59.2rem;
+        }
+        @include respond(phone) {
+            width: 26.3rem;
+        }
+    }
+}
+
+.map-balloon {
+    display: inline-block;
+    padding: 5.6rem;
+    position: absolute;
+    top: 5.6rem;
+    left: 5.6rem;
+    background: map-get($colors, white);
+    @include respond(laptop) {
+        top: 4rem;
+        left: 4rem;
+    }
+    @include respond(tablet) {
+        position: static;
+        background: map-get($colors, light-gray);
+        padding: 4rem 2.4rem;
+    }
+    @include respond(phone) {
+        padding: 1.6rem;
+    }
+    &__container {
+        width: 44.2rem;
+        @include respond(tablet) {
+            width: 64.8rem;
+        }
+        @include respond(phone) {
+            width: 31.9rem;
+        }
+    }
+    &__title {
+        font-size: 3.2rem;
+        font-weight: 600;
+        line-height: 4rem;
+        margin-bottom: map-get($margins, after-subtitle);
+        @include respond(phone) {
+           font-size: 2rem;
+           line-height: 2.8rem;
+        }
+    }
+    &__content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2.4rem;
+        @include respond(phone) {
+            align-items: end
+        }
+        &:nth-child(5) {
+            margin-bottom: 8rem;
+            @include respond(tablet) {
+                margin-bottom: 5.8rem;
+            }
+            @include respond(phone) {
+                margin-bottom: 3.2rem;
+            }
+        }
+        &-typography {
+            display: inline-flex;
+            gap: 0 3.2rem;
+            @include respond(phone) {
+                flex-direction: column;
+                gap: 1.6rem 0;
+            }
+        }
+        &-text {
+            display: inline-block;
+            color: map-get($colors, grey);
+            line-height: 2.4rem;
+        }
+        &-span {
+            display: inline-block;
+            font-weight: 600;
+            color: map-get($colors, black);
+            margin-bottom: .4rem;
+            @include respond(phone) {
+                margin-bottom: 0;
+            }
+            &_margin-bigger {
+                margin-bottom: .8rem;
+                @include respond(phone) {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        &-icon {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            mask: center no-repeat;
+            background: map-get($colors, grey);
+            -webkit-mask-image: url(../icons/copy.svg);
+            -moz-mask-image: url(../icons/copy.svg);
+            mask-image: url(../icons/copy.svg);
+            &-container {
+                display: inline-block;
+                border: .1rem solid map-get($colors, grey);
+                padding: 1.5rem;
+                font-size: 0;
+                &:hover {
+                    cursor: pointer;
+                    border-color: map-get($colors, green);
+                    .map-balloon__content-icon {
+                        background: map-get($colors, green);
+                    }
+                }
+            }
+        }
+    }
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        @include respond(phone) {
+            flex-direction: column;
+            gap: 1.6rem 0;
+        }
+    }
+}
+
+.btn {
+    display: inline-flex;
+    padding: 1.6rem 1.975rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1.2rem;
+    border: none;
+    background: map-get($colors, green);
+    color: map-get($colors, white);
+    &:hover {
+        cursor: pointer;
+    }
+    @include respond(tablet) {
+        padding: 1.6rem 6.9rem;
+    }
+    @include respond(phone) {
+        padding: 1.6rem 7.25rem;
+    }
+    &_light {
+        background: map-get($colors, light-green);
+        color: map-get($colors, green);
+        padding: 1.6rem 2.675rem;
+        @include respond(tablet) {
+            padding: 1.6rem 7.6rem;
+        }
+        @include respond(phone) {
+            padding: 1.6rem 7.95rem;
+        }
+    }
+    &__icon {
+        display: inline-block;
+        width: 2.4rem;
+        height: 2.4rem;
+        mask: center no-repeat;
+        &_download {
+            background: map-get($colors, green);
+            -webkit-mask-image: url(../icons/download.svg);
+            -moz-mask-image: url(../icons/download.svg);
+            mask-image: url(../icons/download.svg);
+        }
+        &_phone {
+            background: map-get($colors, white);
+            -webkit-mask-image: url(../icons/call.svg);
+            -moz-mask-image: url(../icons/call.svg);
+            mask-image: url(../icons/call.svg);
+        }
+    }
+    &__text {
+        font-family: 'Montserrat';
+        font-size: 1.6rem;
+        font-weight: 500;
+        line-height: 2.4rem;
+    }
+}
+
+.table {
+    @include respond(tablet) {
+        margin-bottom: 4rem;
+    }
+    @include respond(phone) {
+        margin-bottom: 3.2rem;
+    }
+    &__row {
+        display: flex;
+        border: .1rem solid map-get($colors, middle-gray);
+        &:not(:last-child) {
+            border-bottom: none;
+            @include respond(phone) {
+                border-bottom: .1rem solid map-get($colors, middle-gray);
+            }
+        }
+        &:hover {
+            background: map-get($colors, light-gray);
+            .table__row-secondary-icon {
+                display: inline-block;
+                @include respond(phone) {
+                    display: none;
+                }
+            }
+        }
+        @include respond(phone) {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            gap: 0 2rem;
+            border: none;
+            border-bottom: .1rem solid map-get($colors, middle-gray);
+        }
+        &-main {
+            padding: 1.5rem 3.1rem 1.6rem;
+            border-right: .1rem solid map-get($colors, middle-gray);
+            @include respond(phone) {
+                border: none;
+                padding: 1.6rem 0 1.5rem 0;
+            }
+            &_first {
+                @include respond(phone) {
+                    padding-top: 0;
+                }
+            }
+            &-text {
+                line-height: 2.4rem;
+                font-weight: 600;
+                width: 34rem;
+                @include respond(laptop) {
+                    width: 35.2rem;
+                }
+                @include respond(tablet) {
+                    width: 19.6rem;
+                }
+                @include respond(phone) {
+                    width: 16.2rem;
+                    line-height: 2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+        &-secondary {
+            padding: 1.5rem 3.1rem 1.6rem 3.2rem;
+            @include respond(phone) {
+                padding: 1.6rem 0 1.5rem 0;
+            }
+            &_first {
+                @include respond(phone) {
+                    padding-top: 0;
+                }
+            }
+            &-text {
+                line-height: 2.4rem;
+                width: 67.6rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                @include respond(laptop) {
+                    width: 81.6rem;
+                }
+                @include respond(tablet) {
+                    width: 37.2rem;
+                }
+                @include respond(phone) {
+                    width: 16.1rem;
+                    line-height: 2rem;
+                }
+            }
+            &-icon {
+                display: none;
+                width: 2.4rem;
+                height: 2.4rem;
+                mask: center no-repeat;
+                background: map-get($colors, grey);
+                -webkit-mask-image: url(../icons/copy.svg);
+                -moz-mask-image: url(../icons/copy.svg);
+                mask-image: url(../icons/copy.svg);
+            }
+        }
+    }
+}
+
+.card-member {
+    font-size: 0;
+    &__image {
+        display: inline-block;
+        width: 40.4rem;
+        height: 40.4rem;
+        @include respond(laptop) {
+            width: 41.6rem;
+            height: 40.4rem;
+        }
+        @include respond(tablet) {
+            width: 33.6rem;
+            height: 34.8rem;
+        }
+        @include respond(phone) {
+            width: 35.1rem;
+            height: 40.4rem;
+        }
+    }
+    &__caption {
+        padding: 2.4rem 3.1rem 2.3rem;
+        border: .1rem solid map-get($colors, middle-gray);
+        border-top: none;
+        &-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 2.4rem;
+            margin-bottom: .8rem;
+        }
+        &-description {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            color: map-get($colors, grey);
+        }
+    }
+}

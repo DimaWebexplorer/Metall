@@ -1,0 +1,51 @@
+.location {
+    padding-top: 1.6rem;
+    margin-bottom: map-get($margins, after-section);
+    @include respond(tablet) {
+        margin-bottom: 10rem;
+    }
+    @include respond(phone) {
+        margin-bottom: 6.4rem;
+    }
+    &__category {
+        font-weight: 500;
+        line-height: 2.4rem;
+        margin-bottom: 2.4rem;
+        @include respond(tablet) {
+            margin-bottom: 4rem;
+        }
+        @include respond(phone) {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8rem;
+        }
+        &-span {
+            margin-right: 1.6rem;
+            color: map-get($colors, mask-grey);
+            @include respond(phone) {
+                margin-right: .8rem;
+            }
+        }
+    }
+    &__title {
+        font-size: 5.6rem;
+        line-height: 6.8rem;
+        margin-bottom: map-get($margins, after-main-title);
+        @include respond(tablet) {
+            font-size: 4.8rem;
+            line-height: 5.8rem;
+            margin-bottom: 4rem;
+        }
+        @include respond(phone) {
+            font-size: 3.2rem;
+            line-height: 4rem;
+            margin-bottom: 3.2rem;
+        }
+    }
+    &__nav-container {
+        position: relative;
+        @include respond(tablet) {
+            position: static;
+        }
+    }
+}

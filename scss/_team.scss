@@ -1,0 +1,134 @@
+.team {
+    margin-bottom: map-get($margins, after-section);
+    @include respond(tablet) {
+        margin-bottom: 10rem;
+    }
+    @include respond(phone) {
+        margin-bottom: 6.4rem;
+    }
+    &__main-container {
+        position: relative;
+    }
+    &__title {
+        width: 157.6rem;
+        margin-bottom: map-get($margins, after-subtitle);
+        @include respond(laptop) {
+            width: 113.6rem;
+        }
+        @include respond(tablet) {
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+        @include respond(phone) {
+            margin-bottom: 2rem;
+        }
+    }
+    &__description {
+        width: 84.8rem;
+        margin-bottom: 4.1rem;
+        @include respond(tablet) {
+            width: 100%;
+            margin-bottom: 5.6rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+        }
+        @include respond(phone) {
+            margin-bottom: 3.2rem;
+        }
+        &-br {
+            @include respond(tablet) {
+                display: none;
+            }
+        }
+    }
+    &__buttons {
+        display: inline-flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        gap: 0 1.6rem;
+        @include respond(tablet) {
+            display: none;
+        }
+        &-btn {
+            display: inline-block;
+            width: 2.4rem;
+            height: 2.4rem;
+            mask: center no-repeat;
+            &_left {
+                background: map-get($colors, middle-gray);
+                -webkit-mask-image: url(../icons/left.svg);
+                -moz-mask-image: url(../icons/left.svg);
+                mask-image: url(../icons/left.svg);
+            }
+            &_right {
+                background: map-get($colors, green);
+                -webkit-mask-image: url(../icons/right.svg);
+                -moz-mask-image: url(../icons/right.svg);
+                mask-image: url(../icons/right.svg);
+            }
+            &-container {
+                padding: 1.5rem;
+                font-size: 0;
+                border: .1rem solid map-get($colors, white);
+                &:hover {
+                    cursor: pointer;
+                }
+                &_right {
+                    border-color: map-get($colors, green);
+                }
+            }
+        }
+    }
+    &__slider-box {
+        position: relative;
+        display: flex;
+        width: 100%;
+        gap: 0 4rem;
+        left: 0;
+        transition: all 1s ease;
+        @include respond(laptop) {
+            gap: 0 2.4rem;
+        }
+        @include respond(tablet) {
+            height: 96.8rem;
+            flex-wrap: wrap;
+            gap: 2.4rem;
+            margin-bottom: 4rem;
+            overflow: hidden;
+        }
+        @include respond(phone) {
+            flex-wrap: nowrap;
+            height: 100%;
+            gap: 0;
+            margin-bottom: 2.4rem;
+            overflow: visible;
+        }
+    }
+    &__indicator {
+        display: inline-block;
+        height: 100%;
+        background: map-get($colors, green);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 1s ease;
+        @include respond(tablet) {
+            width: 50%;
+        }
+        @include respond(phone) {
+            width: 5.85rem;
+        }
+        &-line {
+            display: none;
+            height: .8rem;
+            background: map-get($colors, light-gray);
+            position: relative;
+            overflow: hidden;
+            @include respond(tablet) {
+                display: inline-block;
+                width: 100%
+            }
+        }
+    }
+}
